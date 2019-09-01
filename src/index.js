@@ -10,5 +10,5 @@ const names = [
 ];
 
 
-ReactDOM.render(<App names={names} />, document.getElementById('root'));
+ReactDOM.render(<App names={names}/>, document.getElementById('root'));
 serviceWorker.unregister();
