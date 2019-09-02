@@ -5,8 +5,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 const names = [
-  {id: 1, name: 'max'},
-  {id: 2, name: 'alex'}
+
 ];
 
 
