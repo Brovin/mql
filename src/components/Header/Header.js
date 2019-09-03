@@ -5,7 +5,7 @@ export default props => (
   <header className={style.header}>
     <nav>
       <ul className=''>
-        {props.names.map(item => (<li key={item.id}>{item.name}</li>))}
+        <li>1</li>
       </ul>
     </nav>
   </header>
