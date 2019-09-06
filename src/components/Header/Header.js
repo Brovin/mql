@@ -5,7 +5,7 @@ export default props => (
   <header className={style.header}>
     <nav>
       <ul className=''>
-        <li>1</li>
+        <li>Главная страница</li>
       </ul>
     </nav>
   </header>

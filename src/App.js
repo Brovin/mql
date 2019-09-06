@@ -5,7 +5,7 @@ import Header from "./components/Header/Header";
 const App = (props) => {
   return (
     <div className="App">
-      <Header names={props.names}/>
+      <Header />
     </div>
   );
 };
