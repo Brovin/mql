@@ -1,4 +1,10 @@
 .header {
-    grid-area: header;
-    background: green;
+  grid-area: header;
+  background: green;
+}
+
+.header h1 {
+  margin-top: 7px;
+  color: white;
+  text-align: center;
 }

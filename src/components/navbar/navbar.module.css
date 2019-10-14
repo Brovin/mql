@@ -1,4 +1,19 @@
 .navbar {
-    grid-area: navbar;
-    background: red;
+  grid-area: navbar;
+  background: red;
+  padding: 20px;
+}
+
+.navbar ul {
+  list-style: none;
+}
+
+.navbar li {
+  margin-bottom: 5px;
+}
+
+.item a {
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
 }

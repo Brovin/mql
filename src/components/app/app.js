@@ -4,6 +4,7 @@ import Header from "../header";
 import Navbar from "../navbar";
 import {Route} from 'react-router-dom';
 import Profile from "../profile";
+import Users from "../users";
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
       <Navbar/>
       <div>
         <Route path='/profile' component={Profile} />
+        <Route path='/users' component={Users} />
       </div>
     </div>
   );
