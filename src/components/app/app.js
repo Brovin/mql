@@ -4,7 +4,7 @@ import Header from "../header";
 import Navbar from "../navbar";
 import {Route} from 'react-router-dom';
 import Profile from "../profile";
-import Users from "../users";
+import usersContainer from "../../containers/users-container";
 
 const App = () => {
   return (
@@ -13,7 +13,7 @@ const App = () => {
       <Navbar/>
       <div>
         <Route path='/profile' component={Profile} />
-        <Route path='/users' component={Users} />
+        <Route path='/users' component={usersContainer} />
       </div>
     </div>
   );
