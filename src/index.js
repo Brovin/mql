@@ -3,9 +3,12 @@ import ReactDOM from 'react-dom';
 import store from './reducers';
 import {Provider} from 'react-redux';
 import App from './components/app';
+import {HashRouter} from 'react-router-dom';
 
 
 ReactDOM.render(
-
-        <App />
-    , document.getElementById('root'));
+  <HashRouter>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </HashRouter>, document.getElementById('root'));
