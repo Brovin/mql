@@ -31,16 +31,19 @@ class Users extends React.Component {
     return(
       <div className={styles.users}>
         <h1>Users</h1>
+        <div>
           {pages.map(page => <span
-            className={this.props.currentPage === page && styles.selectedPage}
+            className={this.props.currentPage === page ? styles.selectedPage : null}
             key={page}
             onClick={() => this.onPageChanged(page)}
           >{page}</span>)}
+        </div>
         {this.props.users.map(user =>
           <User
+            user={user}
             key={user.id}
-            photos={user.photos}
-            name={user.name}
+            follow={this.props.follow}
+            unfollow={this.props.unfollow}
           />
         )}
       </div>
