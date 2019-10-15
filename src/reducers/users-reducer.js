@@ -2,7 +2,8 @@ let initialState = {
   users: [],
   totalUsersCount: 0,
   pageSize: 50,
-  currentPage: 1
+  currentPage: 1,
+  isFetching: true
 };
 
 const usersReducer = (state = initialState, action) => {
@@ -37,6 +38,9 @@ const usersReducer = (state = initialState, action) => {
     }
     case 'SET_CURRENT_PAGE': {
       return {...state, currentPage: action.currentPage}
+    }
+    case 'TOGGLE_IS_FETCHING': {
+      return {...state, isFetching: action.isFetching}
     }
     default:
       return state;
