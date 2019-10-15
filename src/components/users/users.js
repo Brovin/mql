@@ -1,54 +1,34 @@
 import React from 'react';
 import styles from './users.module.css';
 import User from "./user";
-import axios from "axios";
 
+const Users = (props) => {
+  let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
 
-class Users extends React.Component {
-
-  componentDidMount() {
-    axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`)
-      .then(response => {
-        this.props.setUsers(response.data.items);
-        this.props.setTotalUsersCount(response.data.totalCount);
-      })
+  let pages = [];
+  for (let i = 1; i <= pagesCount; i++) {
+    pages.push(i);
   }
-
-  onPageChanged = (pageNumber) => {
-    this.props.setCurrentPage(pageNumber);
-    axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`)
-      .then(response => {
-        this.props.setUsers(response.data.items)});
-  };
-
-  render() {
-    let pagesCount = Math.ceil(this.props.totalUsersCount / this.props.pageSize);
-
-    let pages = [];
-    for (let i = 1; i <= pagesCount; i++) {
-      pages.push(i);
-    }
-    return(
-      <div className={styles.users}>
-        <h1>Users</h1>
-        <div>
-          {pages.map(page => <span
-            className={this.props.currentPage === page ? styles.selectedPage : null}
-            key={page}
-            onClick={() => this.onPageChanged(page)}
-          >{page}</span>)}
-        </div>
-        {this.props.users.map(user =>
-          <User
-            user={user}
-            key={user.id}
-            follow={this.props.follow}
-            unfollow={this.props.unfollow}
-          />
-        )}
+  return(
+    <div className={styles.users}>
+      <h1>Users</h1>
+      <div>
+        {pages.map(page => <span
+          className={props.currentPage === page ? styles.selectedPage : null}
+          key={page}
+          onClick={() => props.onPageChanged(page)}
+        >{page}</span>)}
       </div>
-    )
-  }
-}
+      {props.users.map(user =>
+        <User
+          user={user}
+          key={user.id}
+          follow={props.follow}
+          unfollow={props.unfollow}
+        />
+      )}
+    </div>
+  )
+};
 
 export default Users;
