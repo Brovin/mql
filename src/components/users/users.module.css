@@ -1,3 +1,11 @@
 .users {
   grid-area: content;
 }
+
+.selectedPage {
+  font-weight: bold;
+}
+
+.pagesCount {
+  cursor: pointer;
+}
