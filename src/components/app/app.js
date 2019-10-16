@@ -1,10 +1,10 @@
 import React from 'react';
 import styles from './app.module.css';
-import Header from "../header";
-import Navbar from "../navbar";
+import Header from '../header';
+import Navbar from '../navbar';
 import {Route} from 'react-router-dom';
-import Profile from "../profile";
-import usersContainer from "../../containers/users-container";
+import Profile from '../profile';
+import usersContainer from '../../containers/users-container';
 
 const App = () => {
   return (
