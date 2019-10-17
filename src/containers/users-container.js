@@ -5,7 +5,7 @@ import axios from "axios";
 import Users from "../components/users";
 import Preloader from "../components/common/preloader";
 
-class usersContainer extends React.Component {
+class UsersContainer extends React.Component {
   componentDidMount() {
     this.props.toggleIsFetching(true);
     axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`)
@@ -54,4 +54,4 @@ let mapStateToProps = (state) => {
   }
 };
 
-export default connect(mapStateToProps, usersActions)(usersContainer);
+export default connect(mapStateToProps, usersActions)(UsersContainer);
