@@ -3,8 +3,8 @@ import usersReducer from './users-reducer';
 import profileReducer from './profile-reducer';
 
 let reducers = combineReducers({
-  users: usersReducer,
-  profile: profileReducer
+  usersPage: usersReducer,
+  profilePage: profileReducer
 });
 
 let store = createStore(reducers);

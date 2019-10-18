@@ -26,7 +26,7 @@ class ProfileContainer extends React.Component {
 }
 
 let mapStateToProps = (state) => ({
-  profile: state.profile.profile
+  profile: state.profilePage.profile
 });
 
 export default connect(mapStateToProps, profileAction)(withRouter(ProfileContainer));
