@@ -4,7 +4,7 @@ import userPhoto from '../../../assets/images/image.jpg';
 import {NavLink} from 'react-router-dom';
 import {usersApi} from "../../../api/api";
 
-let User = ({user, follow, unfollow}) => {
+let User = ({user, unfollow, follow, toggleIsFollowingProgress, followingInProgress}) => {
   return (
     <div className={styles.user}>
       <div>
@@ -16,20 +16,24 @@ let User = ({user, follow, unfollow}) => {
       <span>{user.name}</span>
       <div>
         {user.followed
-          ? <button onClick={() => {
+          ? <button disabled={followingInProgress.some(id => id === user.id)} onClick={() => {
+            toggleIsFollowingProgress(true, user.id);
             usersApi.unfollow(user.id)
               .then(data => {
               if(data.resultCode === 0) {
                 unfollow(user.id)
               }
+                toggleIsFollowingProgress(false, user.id);
             });
           }}>Unfollow</button>
-          : <button onClick={() => {
+          : <button disabled={followingInProgress.some(id => id === user.id)} onClick={() => {
+            toggleIsFollowingProgress(true, user.id);
             usersApi.follow(user.id)
               .then(data => {
                 if (data.resultCode === 0) {
                   follow(user.id);
                 }
+                toggleIsFollowingProgress(false, user.id);
               });
           }
           }>Follow</button>}

@@ -3,7 +3,8 @@ let initialState = {
   totalUsersCount: 0,
   pageSize: 50,
   currentPage: 1,
-  isFetching: true
+  isFetching: true,
+  followingInProgress: []
 };
 
 const usersReducer = (state = initialState, action) => {
@@ -12,7 +13,7 @@ const usersReducer = (state = initialState, action) => {
       return {
         ...state,
         users: state.users.map(user => {
-          if(user.id === action.userId) {
+          if (user.id === action.userId) {
             return {...user, followed: true}
           }
           return user;
@@ -23,7 +24,7 @@ const usersReducer = (state = initialState, action) => {
       return {
         ...state,
         users: state.users.map(user => {
-          if(user.id === action.userId) {
+          if (user.id === action.userId) {
             return {...user, followed: false}
           }
           return user;
@@ -41,6 +42,14 @@ const usersReducer = (state = initialState, action) => {
     }
     case 'TOGGLE_IS_FETCHING': {
       return {...state, isFetching: action.isFetching}
+    }
+    case 'TOGGLE_IS_FOLLOWING_PROGRESS': {
+      return {
+        ...state,
+        followingInProgress: action.isFetching
+          ? [...state.followingInProgress, action.userId]
+          : state.followingInProgress.filter(id => id !== action.userId)
+      }
     }
     default:
       return state;

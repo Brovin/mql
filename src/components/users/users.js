@@ -25,6 +25,8 @@ const Users = (props) => {
           key={user.id}
           follow={props.follow}
           unfollow={props.unfollow}
+          toggleIsFollowingProgress={props.toggleIsFollowingProgress}
+          followingInProgress={props.followingInProgress}
         />
       )}
     </div>
