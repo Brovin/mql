@@ -13,7 +13,7 @@ const App = () => {
       <HeaderContainer />
       <Navbar/>
       <div>
-        <Route path='/profile/:userId' component={ProfileContainer} />
+        <Route path='/profile/:userId?' component={ProfileContainer} />
         <Route path='/users' component={UsersContainer} />
         <Route path='/login' component={Login} />
       </div>
