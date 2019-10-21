@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import * as usersActions from '../actions/users-actions';
 import Users from "../components/users";
 import Preloader from "../components/common/preloader";
+import {withAuthRedirect} from "../hoc/withAuthRedirect";
 
 class UsersContainer extends React.Component {
   componentDidMount() {
@@ -43,4 +44,4 @@ let mapStateToProps = (state) => {
   }
 };
 
-export default connect(mapStateToProps, usersActions)(UsersContainer);
+export default withAuthRedirect(connect(mapStateToProps, usersActions)(UsersContainer));
