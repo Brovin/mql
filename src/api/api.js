@@ -22,10 +22,20 @@ export const usersApi = {
   unfollow(id) {
     return instance.delete(`follow/${id}`)
       .then(response => response.data);
-  },
+  }
+};
 
+export const profileApi = {
   getProfile(id) {
     return instance.get(`profile/${id}`);
+  },
+
+  getStatus(id) {
+    return instance.get(`status/${id}`);
+  },
+
+  updateStatus(status) {
+    return instance.put(`status`, {status})
   }
 };
 
