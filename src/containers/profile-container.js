@@ -12,20 +12,27 @@ class ProfileContainer extends React.Component {
       userId = 3867;
     }
     this.props.getUserProfile(userId);
+    this.props.getStatus(userId);
   }
 
   render() {
     debugger
     return(
       <div>
-        <Profile {...this.state} profile={this.props.profile} />
+        <Profile
+          {...this.state}
+          profile={this.props.profile}
+          status={this.props.status}
+          updateStatus={this.props.updateStatus}
+        />
       </div>
     )
   }
 }
 
 let mapStateToProps = (state) => ({
-  profile: state.profilePage.profile
+  profile: state.profilePage.profile,
+  status: state.profilePage.status
 });
 
 export default connect(mapStateToProps, profileAction)(withRouter(ProfileContainer));
