@@ -31,11 +31,11 @@ export const profileApi = {
   },
 
   getStatus(id) {
-    return instance.get(`status/${id}`);
+    return instance.get(`profile/status/${id}`);
   },
 
   updateStatus(status) {
-    return instance.put(`status`, {status})
+    return instance.put(`profile/status`, {status})
   }
 };
 

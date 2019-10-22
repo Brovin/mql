@@ -1,6 +1,6 @@
 let initialState = {
   profile: null,
-  status: 'hi'
+  status: ''
 };
 
 const profileReducer = (state = initialState, action) => {

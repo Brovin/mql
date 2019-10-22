@@ -26,14 +26,13 @@ export default class ProfileStatus extends React.Component {
     });
   };
 
-
   render() {
     debugger
     return (
       <div>
         {!this.state.editMode &&
         <div>
-          <span onDoubleClick={this.activeEditMode}>{this.props.status}</span>
+          <span onDoubleClick={this.activeEditMode}>{this.props.status || "-------"}</span>
         </div>
         }
         {this.state.editMode &&
@@ -42,7 +41,7 @@ export default class ProfileStatus extends React.Component {
             onChange={this.onStatusChange}
             autoFocus={true}
             onBlur={this.deactiveEditMode}
-            value={this.props.status}
+            value={this.state.status}
           />
         </div>
         }
