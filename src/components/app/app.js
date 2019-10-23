@@ -5,7 +5,7 @@ import {Route} from 'react-router-dom';
 import ProfileContainer from '../../containers/profile-container';
 import UsersContainer from '../../containers/users-container';
 import HeaderContainer from "../../containers/header-container";
-import Login from "../../login";
+import Login from "../login";
 
 const App = () => {
   return (

@@ -3,11 +3,13 @@ import usersReducer from './users-reducer';
 import profileReducer from './profile-reducer';
 import authReducer from './auth-reducer';
 import thunk from 'redux-thunk';
+import {reducer as reduxForm} from 'redux-form';
 
 let reducers = combineReducers({
   usersPage: usersReducer,
   profilePage: profileReducer,
-  auth: authReducer
+  auth: authReducer,
+  form: reduxForm
 });
 
 let store = createStore(reducers, applyMiddleware(thunk));
