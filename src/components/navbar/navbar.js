@@ -12,6 +12,9 @@ const Navbar = () => {
         <li className={styles.item}>
           <NavLink to="/users">Users</NavLink>
         </li>
+        <li className={styles.item}>
+          <NavLink to="/dialogs">Dialogs</NavLink>
+        </li>
       </ul>
     </nav>
   )

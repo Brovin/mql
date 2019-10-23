@@ -1,0 +1,1 @@
+export const sendMessage = (newMessageBody) => ({type: 'SEND_MESSAGE', newMessageBody});
