@@ -5,7 +5,7 @@ import {Field, reduxForm} from "redux-form";
 const Dialogs = (props) => {
 
   let addNewMessage = (values) => {
-    console.log(values.newMessageBody)
+    props.sendMessage(values.newMessageBody);
   };
 
   return(

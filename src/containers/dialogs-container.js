@@ -10,7 +10,6 @@ class DialogsContainer extends React.Component {
     return (
       <Dialogs
         {...this.props}
-        messages={this.props.messages}
       />
     )
   }
