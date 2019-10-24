@@ -6,6 +6,7 @@ const Header = (props) => {
   return (
     <header className={styles.header}>
       <h1>Social Network</h1>
+
       <div>
         {props.isAuth
           ? <div>{props.userLogin} - <button onClick={props.logout}>Log out</button></div>
