@@ -7,6 +7,8 @@ const Profile = (props) => {
     <div className={styles.profile}>
       <h1>Profile</h1>
       <ProfileInfo
+        savePhoto={props.savePhoto}
+        isOwner={props.isOwner}
         profile={props.profile}
         status={props.status}
         updateStatus={props.updateStatus}

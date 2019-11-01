@@ -11,6 +11,9 @@ const profileReducer = (state = initialState, action) => {
     case 'SET_STATUS': {
       return {...state, status: action.status}
     }
+    case 'SAVE_PHOTO_SUCCESS': {
+      return {...state, profile: {...state.profile, photos: action.photos}}
+    }
     default:
       return state;
   }
