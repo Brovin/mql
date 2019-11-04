@@ -20,7 +20,7 @@ const ProfileInfo = (props) => {
     }
   };
 
-  //Todo goToEditMode и useState
+  //Todo Реализовать goToEditMode и useState
   
   return(
     <div className={styles.profileInfo}>
