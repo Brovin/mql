@@ -1,5 +1,4 @@
 import React from 'react';
-import Contact from "../profileData/contact";
 import {createField, Input, Textarea} from "../../../common/forms-controls/forms-controls";
 import {reduxForm} from "redux-form";
 

@@ -23,6 +23,7 @@ const ProfileInfo = (props) => {
 
   const onSubmit = (formData) => {
       props.saveProfile(formData);
+      setEditMode(false);
   };
   
   return(
@@ -32,7 +33,7 @@ const ProfileInfo = (props) => {
       <div>
         {props.isOwner && <input type={"file"} onChange={onMainPhotoSelected} />}
         {editMode
-            ? <ProfileDataForm profile={props.profile} onSubmit={onSubmit} />
+            ? <ProfileDataForm initialValues={props.profile} profile={props.profile} onSubmit={onSubmit} />
             : <ProfileData goToEditMode={() => {setEditMode(true)}}
                            profile={props.profile} isOwner={props.isOwner} />}
       </div>
