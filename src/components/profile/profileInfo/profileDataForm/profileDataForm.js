@@ -6,6 +6,9 @@ const ProfileDataForm = (props) => {
   return (
     <form onSubmit={props.handleSubmit}>
       <div><button>Save</button></div>
+      {props.error && <div>
+        {props.error}
+      </div>}
       <div>
         <div>
           <b>Full name: </b> {createField("Full name", "fullName", [], Input)}
@@ -22,12 +25,16 @@ const ProfileDataForm = (props) => {
           <b>About me: </b>
           {createField("About me", "aboutMe", [], Textarea)}
         </div>
-        {/*<div>*/}
-        {/*  <b>Contacts: </b>*/}
-        {/*  {Object.keys(props.profile.contacts).map(key => {*/}
-        {/*    return <Contact key={key} ContactTitle={key} ContactValue={props.profile.contacts[key]} />*/}
-        {/*  })}*/}
-        {/*</div>*/}
+        <div>
+          <b>Contacts: </b>
+          {Object.keys(props.profile.contacts).map(key => {
+            return (
+                <div key={key}>
+                  <b>{key}: {createField(key, "contacts." + key, [], Input)}</b>
+                </div>
+            )
+          })}
+        </div>
       </div>
     </form>
   )
