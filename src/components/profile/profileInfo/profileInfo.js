@@ -4,6 +4,7 @@ import ProfileStatus from "./profileStatus";
 import userPhoto from '../../../assets/images/image.jpg';
 import styles from './profileInfo.module.css';
 import ProfileData from "./profileData";
+import ProfileDataForm from "./profileDataForm";
 
 
 const ProfileInfo = (props) => {
@@ -20,7 +21,9 @@ const ProfileInfo = (props) => {
     }
   };
 
-  //Todo Реализовать goToEditMode и useState
+  const onSubmit = (formData) => {
+      props.saveProfile(formData);
+  };
   
   return(
     <div className={styles.profileInfo}>
@@ -28,12 +31,11 @@ const ProfileInfo = (props) => {
       <img src={props.profile.photos.large || userPhoto} alt=""/>
       <div>
         {props.isOwner && <input type={"file"} onChange={onMainPhotoSelected} />}
+        {editMode
+            ? <ProfileDataForm profile={props.profile} onSubmit={onSubmit} />
+            : <ProfileData goToEditMode={() => {setEditMode(true)}}
+                           profile={props.profile} isOwner={props.isOwner} />}
       </div>
-      <ProfileData
-        profile={props.profile}
-        isOwner={props.isOwner}
-        goToEditMode={props.goToEditMode}
-      />
     </div>
   )
 };
