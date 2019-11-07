@@ -1,7 +1,7 @@
 import React from 'react';
 
 const DialogItem = (props) => {
-  return(
+  return (
     <div>
       <span>{props.message}</span>
     </div>

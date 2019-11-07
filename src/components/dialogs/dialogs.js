@@ -10,16 +10,16 @@ const Dialogs = (props) => {
     props.sendMessage(values.newMessageBody);
   };
 
-  return(
+  return (
     <div>
       <div>
         <h1>Dialogs</h1>
-        {props.messages.map(message=> <DialogItem
+        {props.messages.map(message => <DialogItem
           message={message.message}
           key={message.id}
         />)}
       </div>
-      <AddMessageFormRedux onSubmit={addNewMessage} />
+      <AddMessageFormRedux onSubmit={addNewMessage}/>
     </div>
   )
 };
@@ -27,7 +27,7 @@ const Dialogs = (props) => {
 const maxLength50 = maxLengthCreator(50);
 
 const AddMessageForm = (props) => {
-  return(
+  return (
     <div>
       <form onSubmit={props.handleSubmit}>
         <div>

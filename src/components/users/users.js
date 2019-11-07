@@ -4,7 +4,7 @@ import User from "./user";
 import Paginator from "../common/paginator";
 
 const Users = React.memo(props => {
-  return(
+  return (
     <div className={styles.users}>
       <h1>Users</h1>
       <Paginator

@@ -2,9 +2,11 @@ import React from 'react';
 import Contact from "./contact";
 
 const ProfileData = (props) => {
-  return(
+  return (
     <div>
-      {props.isOwner && <div><button onClick={props.goToEditMode}>Edit</button></div>}
+      {props.isOwner && <div>
+        <button onClick={props.goToEditMode}>Edit</button>
+      </div>}
       <div>
         <b>Full name: </b>{props.profile.fullName}
       </div>
@@ -20,7 +22,7 @@ const ProfileData = (props) => {
       <div>
         <b>Contacts: </b>
         {Object.keys(props.profile.contacts).map(key => {
-          return <Contact key={key} ContactTitle={key} ContactValue={props.profile.contacts[key]} />
+          return <Contact key={key} ContactTitle={key} ContactValue={props.profile.contacts[key]}/>
         })}
       </div>
     </div>

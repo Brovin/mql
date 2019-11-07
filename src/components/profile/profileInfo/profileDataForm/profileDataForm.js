@@ -5,7 +5,9 @@ import {reduxForm} from "redux-form";
 const ProfileDataForm = (props) => {
   return (
     <form onSubmit={props.handleSubmit}>
-      <div><button>Save</button></div>
+      <div>
+        <button>Save</button>
+      </div>
       {props.error && <div>
         {props.error}
       </div>}
@@ -29,9 +31,9 @@ const ProfileDataForm = (props) => {
           <b>Contacts: </b>
           {Object.keys(props.profile.contacts).map(key => {
             return (
-                <div key={key}>
-                  <b>{key}: {createField(key, "contacts." + key, [], Input)}</b>
-                </div>
+              <div key={key}>
+                <b>{key}: {createField(key, "contacts." + key, [], Input)}</b>
+              </div>
             )
           })}
         </div>

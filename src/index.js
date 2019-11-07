@@ -9,6 +9,6 @@ import {BrowserRouter} from 'react-router-dom';
 ReactDOM.render(
   <BrowserRouter>
     <Provider store={store}>
-      <App />
+      <App/>
     </Provider>
   </BrowserRouter>, document.getElementById('root'));

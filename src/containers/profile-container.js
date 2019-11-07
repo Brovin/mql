@@ -8,9 +8,9 @@ class ProfileContainer extends React.Component {
 
   refreshProfile() {
     let userId = this.props.match.params.userId;
-    if(!userId) {
+    if (!userId) {
       userId = this.props.authorizedUserId;
-      if(!userId) {
+      if (!userId) {
         this.props.history.push("/login");
       }
     }
@@ -23,13 +23,13 @@ class ProfileContainer extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevState, snapshot) {
-    if(this.props.match.params.userId !== prevProps.match.params.userId) {
+    if (this.props.match.params.userId !== prevProps.match.params.userId) {
       this.refreshProfile();
     }
   }
 
   render() {
-    return(
+    return (
       <div>
         <Profile
           {...this.state}

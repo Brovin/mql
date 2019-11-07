@@ -7,18 +7,18 @@ import {createField, Input} from "../common/forms-controls/forms-controls";
 import {required} from "../../utils/validators/validators";
 
 const LoginForm = (props) => {
-  return(
+  return (
     <form onSubmit={props.handleSubmit}>
       <div>
-        <Field placeholder={"Email"} name={"email"} component={"input"} />
+        <Field placeholder={"Email"} name={"email"} component={"input"}/>
       </div>
       <div>
-        <Field placeholder={"Password"} name={"password"} component={"input"} type={"password"} />
+        <Field placeholder={"Password"} name={"password"} component={"input"} type={"password"}/>
       </div>
       <div>
-        <Field type={"checkbox"} name={"rememberMe"} component={"input"} />Remember Me
+        <Field type={"checkbox"} name={"rememberMe"} component={"input"}/>Remember Me
       </div>
-      {props.captchaUrl && <img src={props.captchaUrl} alt="" />}
+      {props.captchaUrl && <img src={props.captchaUrl} alt=""/>}
       {props.captchaUrl && createField("Symbols from image", "captcha", [required], Input, {})}
       <div>
         {props.error && <span>{props.error}</span>}
@@ -39,14 +39,14 @@ const Login = (props) => {
     props.login(formData.email, formData.password, formData.rememberMe, formData.captcha)
   };
 
-  if(props.isAuth) {
-    return <Redirect to={"/profile"} />
+  if (props.isAuth) {
+    return <Redirect to={"/profile"}/>
   }
 
-  return(
+  return (
     <div>
       <h1>Login</h1>
-      <LoginReduxForm onSubmit={onSubmit} captchaUrl={props.captchaUrl} />
+      <LoginReduxForm onSubmit={onSubmit} captchaUrl={props.captchaUrl}/>
     </div>
   )
 };
